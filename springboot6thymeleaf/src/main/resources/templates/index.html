@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>thymeleaf</title>
+</head>
+<body>
+    <!--每种视图模板，都具有的最基本的功能，对变量的输出-->
+    <!--强调的知识点：
+       1.thymeleaf的输出和前面的模板都不一样 thymeleaf不能单独使用来输出
+       2.th变红色，thymeleaf也没有代码自动补全
+    -->
+    <div th:text="${user.username}"></div><br>
+    [[${user.id}]]
+
+    <br><br>
+    <span th:text="${str}"></span>
+    <br>
+    [[${str}]]
+
+    <br><br>
+    <span th:utext="${str}"></span>
+    <br>
+    [(${str})]
+
+    <br><br>
+    <input type="text" th:value="${str}">
+
+    <!--NULL或者空字符创会返回true-->
+    <br><br>
+    <div th:text="${#strings.isEmpty(str)}"></div>
+
+    <br><br>
+    <div th:text="${#dates.format(dd,'yyyy-MM-dd')}"></div>
+
+    <br><br>
+    <span th:if="${sex}=='女'">
+        性别：女
+    </span>
+
+    <br><br>
+    <div th:switch="${id}">
+        <span th:case = "1">id为1</span>
+        <span th:case = "2">id为2</span>
+        <span th:case = "3">id为3</span>
+    </div>
+
+    <br><br>
+    <table border="1" cellpadding="0" cellspacing="0" width="500">
+        <tr>
+            <td>用户ID</td>
+            <td>用户名</td>
+            <td>用户密码</td>
+        </tr>
+        <tr th:each="user1:${users}">
+            <td th:text="${user1.id}"></td>
+            <td th:text="${user1.username}">用户名</td>
+            <td th:text="${user1.password}">用户密码</td>
+        </tr>
+    </table>
+
+    <br><br>
+    <table border="1" cellpadding="0" cellspacing="0" width="500">
+        <tr>
+            <td>用户ID</td>
+            <td>用户名</td>
+            <td>用户密码</td>
+        </tr>
+        <tr th:each="map:${maps}">
+            <td th:each="val:${map}" th:text="${val.value.id}"></td>
+            <td th:each="val:${map}" th:text="${val.value.username}"></td>
+            <td th:each="val:${map}" th:text="${val.value.password}"></td>
+        </tr>
+    </table>
+
+    <br><br>
+    <a th:href="@{http://www.baidu.com}">绝对路径</a>
+    <br><br>
+    <a th:href="@{/show}">相对路径</a>
+    <br><br>
+    <a th:href="@{~/project/resource}">相对于服务器的根</a>
+    <br><br>
+    <a th:href="@{/show(id=1,name=zhangsan)}">相对路径-传参</a>
+    <br><br>
+    <a th:href="@{/path/{id}/show(id=1,name=zhangsan)}">相对路径-传参-restful</a>
+
+</body>
+</html>

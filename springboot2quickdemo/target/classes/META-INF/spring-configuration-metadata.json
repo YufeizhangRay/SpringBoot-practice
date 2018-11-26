@@ -1,0 +1,54 @@
+{
+  "groups": [
+    {
+      "name": "user",
+      "type": "cn.zyf.quickspringboot.springbootquickdemo.model.User",
+      "sourceType": "cn.zyf.quickspringboot.springbootquickdemo.model.User"
+    }
+  ],
+  "properties": [
+    {
+      "name": "user.address",
+      "type": "cn.zyf.quickspringboot.springbootquickdemo.model.Address",
+      "sourceType": "cn.zyf.quickspringboot.springbootquickdemo.model.User"
+    },
+    {
+      "name": "user.birthday",
+      "type": "java.util.Date",
+      "sourceType": "cn.zyf.quickspringboot.springbootquickdemo.model.User"
+    },
+    {
+      "name": "user.id",
+      "type": "java.lang.Integer",
+      "sourceType": "cn.zyf.quickspringboot.springbootquickdemo.model.User",
+      "defaultValue": 0
+    },
+    {
+      "name": "user.list",
+      "type": "java.util.List<java.lang.String>",
+      "sourceType": "cn.zyf.quickspringboot.springbootquickdemo.model.User"
+    },
+    {
+      "name": "user.map",
+      "type": "java.util.Map<java.lang.String,java.lang.Object>",
+      "sourceType": "cn.zyf.quickspringboot.springbootquickdemo.model.User"
+    },
+    {
+      "name": "user.password",
+      "type": "java.lang.String",
+      "sourceType": "cn.zyf.quickspringboot.springbootquickdemo.model.User"
+    },
+    {
+      "name": "user.sex",
+      "type": "java.lang.Boolean",
+      "sourceType": "cn.zyf.quickspringboot.springbootquickdemo.model.User",
+      "defaultValue": false
+    },
+    {
+      "name": "user.username",
+      "type": "java.lang.String",
+      "sourceType": "cn.zyf.quickspringboot.springbootquickdemo.model.User"
+    }
+  ],
+  "hints": []
+}
